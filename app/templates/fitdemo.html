@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Logos HR Insights Demo</title>
+  </head>
+  <body>
+    <style>
+      body {
+          font-family: "Libre Franklin";
+      }
+      h1 {
+          font-weight: 900;
+      }
+      </style>
+    <div class="container" style="padding-top: 1em;">
+                        <h1>LogosHR Insights Demo</h1>
+<h3>{{ username }} profile </h3>
+    {% if msg %}
+        <div style="{{ msg_style }}"><h4>{{ msg }}</h4></div>
+    {% endif %}
+  </div>
+    <div style="padding-top: 1em;">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-11">
+        <h3>{{ username }}'s Personality Profile</h3>
+
+        </div>
+    </div>
+
+     {% for trait,score in traits %}
+         <div class="row">
+             <div class="col-md-1"></div>
+             <div class="col-md-1" style="background-color: #ccffcc; font-weight: bold;">{{ score }}</div>
+
+             <div class="col-md-10">{{ trait }}</div>
+         </div>
+    {% endfor %}
+
+    </div>
+    </div>
+
+    <br>
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-11">
+                <h3>Team fit score</h3>
+
+        </div>
+    </div>
+     {% for team,score in team_scores %}
+         <div class="row">
+             <div class="col-md-1 score_container"></div>
+             <div class="col-md-1 score_container" style="font-weight: bold; background-color: #ccffcc;">{{ score }}</div>
+
+             <div class="col-md-10 score_container">{{ team }}</div>
+         </div>
+    {% endfor %}
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script>
+$(".score_container").each( function(index) {
+    console.log(parseFloat(this.text()));
+});
+    </script>
+  </body>
+</html>

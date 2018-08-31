@@ -1,0 +1,8 @@
+runtime: python
+service: demo
+env: flex
+threadsafe: true
+entrypoint: gunicorn -b :$PORT app.app:app
+
+runtime_config:
+  python_version: 3
