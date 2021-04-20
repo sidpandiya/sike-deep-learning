@@ -26,7 +26,7 @@ numpy==1.15.1
 oauth2client==3.0.0
 pluggy==0.7.1
 protobuf==3.6.1
-py==1.5.4
+py==1.10.0
 pyasn1==0.4.4
 pyasn1-modules==0.2.2
 pycparser==2.18
