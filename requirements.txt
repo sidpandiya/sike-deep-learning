@@ -44,7 +44,7 @@ service-identity==17.0.0
 six==1.11.0
 Twisted==18.7.0
 txaio==18.7.1
-urllib3==1.23
+urllib3==1.26.5
 watson-developer-cloud==1.7.1
 Werkzeug==0.14.1
 zope.interface==4.5.0
